@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 760" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#059669"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ea580c"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d97706"/>
+    </marker>
+    <filter id="cardShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <style>
+    .card-label { font-size: 13px; font-weight: 600; fill: #0f172a; }
+    .card-sub   { font-size: 10.5px; fill: #334155; }
+    .section    { font-size: 12px; font-weight: 700; letter-spacing: 0.5px; fill: #64748b; }
+    .flow       { stroke-dasharray: 6 5; fill: none; stroke-width: 2; }
+    @media (prefers-color-scheme: dark) {
+      .bgrect { fill: #0d1117; }
+      .card-label { fill: #f1f5f9; }
+      .card-sub   { fill: #cbd5e1; }
+      .section    { fill: #94a3b8; }
+      .vpcbox     { stroke: #475569 !important; }
+    }
+  </style>
+
+  <rect class="bgrect" x="0" y="0" width="1150" height="760" fill="#ffffff"/>
+
+  <!-- ============ CI/CD PIPELINE ROW ============ -->
+  <text class="section" x="30" y="24">CI/CD PIPELINE</text>
+
+  <!-- Developer -->
+  <g filter="url(#cardShadow)">
+    <rect x="30" y="40" width="180" height="56" rx="10" fill="#1e293b" stroke="#0f172a"/>
+  </g>
+  <text class="card-label" x="120" y="64" text-anchor="middle" fill="#f8fafc">👨‍💻 Developer</text>
+  <text class="card-sub" x="120" y="80" text-anchor="middle" fill="#cbd5e1">git push</text>
+
+  <!-- CodeStar Connection -->
+  <g filter="url(#cardShadow)">
+    <rect x="250" y="40" width="180" height="56" rx="10" fill="#ede9fe" stroke="#7c3aed"/>
+  </g>
+  <text class="card-label" x="340" y="64" text-anchor="middle">🔗 CodeStar</text>
+  <text class="card-sub" x="340" y="80" text-anchor="middle">Connection</text>
+
+  <!-- CodePipeline -->
+  <g filter="url(#cardShadow)">
+    <rect x="470" y="40" width="180" height="56" rx="10" fill="#ede9fe" stroke="#7c3aed"/>
+  </g>
+  <text class="card-label" x="560" y="64" text-anchor="middle">🔁 CodePipeline</text>
+  <text class="card-sub" x="560" y="80" text-anchor="middle">source → build → deploy</text>
+
+  <!-- CodeBuild -->
+  <g filter="url(#cardShadow)">
+    <rect x="690" y="40" width="180" height="56" rx="10" fill="#ede9fe" stroke="#7c3aed"/>
+  </g>
+  <text class="card-label" x="780" y="64" text-anchor="middle">🔨 CodeBuild</text>
+  <text class="card-sub" x="780" y="80" text-anchor="middle">builds Docker image</text>
+
+  <!-- ECR -->
+  <g filter="url(#cardShadow)">
+    <rect x="910" y="40" width="180" height="56" rx="10" fill="#fef3c7" stroke="#d97706"/>
+  </g>
+  <text class="card-label" x="1000" y="64" text-anchor="middle">📦 ECR</text>
+  <text class="card-sub" x="1000" y="80" text-anchor="middle">image repository</text>
+
+  <!-- ============ NOTIFICATIONS ROW ============ -->
+  <!-- SNS -->
+  <g filter="url(#cardShadow)">
+    <rect x="470" y="170" width="180" height="56" rx="10" fill="#e0e7ff" stroke="#4f46e5"/>
+  </g>
+  <text class="card-label" x="560" y="194" text-anchor="middle">📣 SNS Topic</text>
+  <text class="card-sub" x="560" y="210" text-anchor="middle">pipeline events</text>
+
+  <!-- Chatbot -->
+  <g filter="url(#cardShadow)">
+    <rect x="690" y="170" width="180" height="56" rx="10" fill="#e0e7ff" stroke="#4f46e5"/>
+  </g>
+  <text class="card-label" x="780" y="194" text-anchor="middle">🤖 AWS Chatbot</text>
+  <text class="card-sub" x="780" y="210" text-anchor="middle">Slack integration</text>
+
+  <!-- Slack -->
+  <g filter="url(#cardShadow)">
+    <rect x="910" y="170" width="180" height="56" rx="10" fill="#1e293b" stroke="#0f172a"/>
+  </g>
+  <text class="card-label" x="1000" y="194" text-anchor="middle" fill="#f8fafc">💬 Slack</text>
+  <text class="card-sub" x="1000" y="210" text-anchor="middle" fill="#cbd5e1">deploy notifications</text>
+
+  <!-- ============ VPC ============ -->
+  <rect class="vpcbox" x="210" y="300" width="900" height="430" rx="14" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text class="section" x="230" y="290">VPC — PUBLIC + PRIVATE SUBNETS</text>
+
+  <!-- Users -->
+  <g filter="url(#cardShadow)">
+    <rect x="20" y="472" width="170" height="56" rx="10" fill="#1e293b" stroke="#0f172a"/>
+  </g>
+  <text class="card-label" x="105" y="496" text-anchor="middle" fill="#f8fafc">🌐 Internet</text>
+  <text class="card-sub" x="105" y="512" text-anchor="middle" fill="#cbd5e1">Users</text>
+
+  <!-- ALB -->
+  <g filter="url(#cardShadow)">
+    <rect x="250" y="472" width="170" height="56" rx="10" fill="#dbeafe" stroke="#2563eb"/>
+  </g>
+  <text class="card-label" x="335" y="496" text-anchor="middle">⚖️ ALB</text>
+  <text class="card-sub" x="335" y="512" text-anchor="middle">ACM HTTPS</text>
+
+  <!-- ECS Fargate -->
+  <g filter="url(#cardShadow)">
+    <rect x="520" y="472" width="200" height="56" rx="10" fill="#ecfdf5" stroke="#059669"/>
+  </g>
+  <text class="card-label" x="620" y="496" text-anchor="middle">🐳 ECS Fargate</text>
+  <text class="card-sub" x="620" y="512" text-anchor="middle">autoscaled service</text>
+
+  <!-- SSM -->
+  <g filter="url(#cardShadow)">
+    <rect x="790" y="472" width="180" height="56" rx="10" fill="#fef3c7" stroke="#d97706"/>
+  </g>
+  <text class="card-label" x="880" y="496" text-anchor="middle">🔑 SSM</text>
+  <text class="card-sub" x="880" y="512" text-anchor="middle">Parameter Store</text>
+
+  <!-- EC2 Postgres+Redis -->
+  <g filter="url(#cardShadow)">
+    <rect x="520" y="610" width="200" height="56" rx="10" fill="#ecfdf5" stroke="#059669"/>
+  </g>
+  <text class="card-label" x="620" y="634" text-anchor="middle">🗄️ EC2</text>
+  <text class="card-sub" x="620" y="650" text-anchor="middle">Postgres + Redis</text>
+
+  <!-- S3 app data -->
+  <g filter="url(#cardShadow)">
+    <rect x="790" y="610" width="180" height="56" rx="10" fill="#fef3c7" stroke="#d97706"/>
+  </g>
+  <text class="card-label" x="880" y="634" text-anchor="middle">🪣 S3</text>
+  <text class="card-sub" x="880" y="650" text-anchor="middle">application data</text>
+
+  <!-- ============ EDGES: CI/CD (green) ============ -->
+  <path id="p1" class="flow" stroke="#059669" marker-end="url(#arrowGreen)" d="M210,68 L250,68"/>
+  <path id="p2" class="flow" stroke="#059669" marker-end="url(#arrowGreen)" d="M430,68 L470,68"/>
+  <path id="p3" class="flow" stroke="#059669" marker-end="url(#arrowGreen)" d="M650,68 L690,68"/>
+  <path id="p4" class="flow" stroke="#059669" marker-end="url(#arrowGreen)" d="M870,68 L910,68"/>
+  <path id="p5" class="flow" stroke="#059669" marker-end="url(#arrowGreen)"
+        d="M560,96 C560,220 630,320 620,472"/>
+
+  <!-- ============ EDGES: notifications (indigo) ============ -->
+  <path id="p6" class="flow" stroke="#4f46e5" marker-end="url(#arrowGreen)" d="M560,96 L560,170"/>
+  <path id="p7" class="flow" stroke="#4f46e5" marker-end="url(#arrowGreen)" d="M650,198 L690,198"/>
+  <path id="p8" class="flow" stroke="#4f46e5" marker-end="url(#arrowGreen)" d="M870,198 L910,198"/>
+
+  <!-- ============ EDGES: runtime traffic (blue) ============ -->
+  <path id="p9"  class="flow" stroke="#2563eb" marker-end="url(#arrowBlue)" d="M190,498 L250,498"/>
+  <path id="p10" class="flow" stroke="#2563eb" marker-end="url(#arrowBlue)" d="M420,498 L520,498"/>
+  <path id="p11" class="flow" stroke="#2563eb" marker-end="url(#arrowBlue)" d="M620,528 L620,610"/>
+  <path id="p12" class="flow" stroke="#d97706" marker-end="url(#arrowAmber)" d="M720,492 L790,492"/>
+  <path id="p13" class="flow" stroke="#d97706" marker-end="url(#arrowAmber)" d="M700,528 C700,580 760,600 790,632"/>
+
+  <!-- ============ ANIMATED DOTS ============ -->
+  <!-- CI/CD deploy flow: developer -> ecr -> ecs -->
+  <circle r="5" fill="#059669">
+    <animateMotion dur="4s" repeatCount="indefinite"
+      path="M210,68 L250,68 L430,68 L650,68 L870,68 L910,68 L1000,68 L1000,68"/>
+  </circle>
+  <circle r="5" fill="#059669">
+    <animateMotion dur="4s" begin="1.2s" repeatCount="indefinite"
+      path="M560,96 C560,220 630,320 620,472"/>
+  </circle>
+
+  <!-- Notification flow -->
+  <circle r="4.5" fill="#4f46e5">
+    <animateMotion dur="3.5s" repeatCount="indefinite"
+      path="M560,96 L560,170 L560,198 L650,198 L690,198 L870,198 L910,198"/>
+  </circle>
+
+  <!-- Runtime traffic: users -> ALB -> ECS -> data -->
+  <circle r="5" fill="#2563eb">
+    <animateMotion dur="2.6s" repeatCount="indefinite"
+      path="M190,498 L250,498 L420,498 L520,498"/>
+  </circle>
+  <circle r="4.5" fill="#059669">
+    <animateMotion dur="2.6s" begin="0.9s" repeatCount="indefinite"
+      path="M620,528 L620,610"/>
+  </circle>
+  <circle r="4.5" fill="#d97706">
+    <animateMotion dur="2.6s" begin="1.3s" repeatCount="indefinite"
+      path="M720,492 L790,492"/>
+  </circle>
+
+  <!-- Dash flow animation on all lines -->
+  <animate href="#p1" attributeName="stroke-dashoffset" from="0" to="-22" dur="1s" repeatCount="indefinite"/>
+  <animate href="#p2" attributeName="stroke-dashoffset" from="0" to="-22" dur="1s" repeatCount="indefinite"/>
+  <animate href="#p3" attributeName="stroke-dashoffset" from="0" to="-22" dur="1s" repeatCount="indefinite"/>
+  <animate href="#p4" attributeName="stroke-dashoffset" from="0" to="-22" dur="1s" repeatCount="indefinite"/>
+  <animate href="#p5" attributeName="stroke-dashoffset" from="0" to="-22" dur="1s" repeatCount="indefinite"/>
+  <animate href="#p6" attributeName="stroke-dashoffset" from="0" to="-22" dur="1s" repeatCount="indefinite"/>
+  <animate href="#p7" attributeName="stroke-dashoffset" from="0" to="-22" dur="1s" repeatCount="indefinite"/>
+  <animate href="#p8" attributeName="stroke-dashoffset" from="0" to="-22" dur="1s" repeatCount="indefinite"/>
+  <animate href="#p9" attributeName="stroke-dashoffset" from="0" to="-22" dur="1s" repeatCount="indefinite"/>
+  <animate href="#p10" attributeName="stroke-dashoffset" from="0" to="-22" dur="1s" repeatCount="indefinite"/>
+  <animate href="#p11" attributeName="stroke-dashoffset" from="0" to="-22" dur="1s" repeatCount="indefinite"/>
+  <animate href="#p12" attributeName="stroke-dashoffset" from="0" to="-22" dur="1s" repeatCount="indefinite"/>
+  <animate href="#p13" attributeName="stroke-dashoffset" from="0" to="-22" dur="1s" repeatCount="indefinite"/>
+
+  <!-- ============ LEGEND ============ -->
+  <circle cx="40" cy="742" r="5" fill="#059669"/>
+  <text class="card-sub" x="52" y="746">CI/CD deploy flow</text>
+  <circle cx="220" cy="742" r="5" fill="#4f46e5"/>
+  <text class="card-sub" x="232" y="746">Pipeline notifications</text>
+  <circle cx="420" cy="742" r="5" fill="#2563eb"/>
+  <text class="card-sub" x="432" y="746">Live user traffic</text>
+  <circle cx="580" cy="742" r="5" fill="#d97706"/>
+  <text class="card-sub" x="592" y="746">Config / data reads</text>
+</svg>
