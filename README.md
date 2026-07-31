@@ -18,59 +18,6 @@ Built from real-world infrastructure I've deployed in my career, generalized her
 
 <img src="docs/architecture-animated.svg" alt="Animated architecture diagram showing the CI/CD deploy flow and live request traffic flow through the VPC" width="100%">
 
-<details>
-<summary>Static Mermaid version (fallback / diff-friendly)</summary>
-
-```mermaid
-flowchart TB
-    dev["Developer push\n(GitHub / Bitbucket)"]
-
-    subgraph CICD["CI/CD Pipeline"]
-        direction TB
-        connection["CodeStar Connection"]
-        pipeline["CodePipeline"]
-        build["CodeBuild\n(builds Docker image)"]
-        ecr[("ECR Repository")]
-        artifacts[("S3: pipeline artifacts")]
-        sns["SNS Topic"]
-        chatbot["AWS Chatbot"]
-        slack(["Slack channel"])
-    end
-
-    subgraph VPC["VPC"]
-        direction TB
-        subgraph Public["Public subnets"]
-            alb["Application Load Balancer\n(ACM HTTPS)"]
-        end
-        subgraph Private["Private/App subnets"]
-            ecs["ECS Fargate Service\n(autoscaled tasks)"]
-            data["EC2: PostgreSQL + Redis"]
-        end
-    end
-
-    ssm[("SSM Parameter Store\napp env vars")]
-    state[("S3: Terraform remote state")]
-    appdata[("S3: application data")]
-    users(["Internet users"])
-
-    dev --> connection --> pipeline
-    pipeline --> build --> ecr
-    pipeline -.artifacts.-> artifacts
-    build --> ecr --> pipeline
-    pipeline --> ecs
-    pipeline --> sns --> chatbot --> slack
-
-    users -->|HTTPS| alb --> ecs
-    ecs --> data
-    ecs -.reads.-> ssm
-    ecs -.reads/writes.-> appdata
-
-    classDef store fill:#e8e8e8,stroke:#888,color:#333;
-    class ecr,artifacts,ssm,state,appdata store;
-```
-
-</details>
-
 ## Repository layout
 
 ```
